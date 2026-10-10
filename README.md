@@ -14,12 +14,18 @@ the manifest.
 
 Copy the whole repository into the skill directory of the target agent, or pass
 the repository URL to an agent that supports public skills. At minimum keep
-`SKILL.md`, `references/`, `templates/`, and `scripts/`; `tests/` is useful for
-maintainers. Fill `templates/basis-manifest.example.json` for each case and run:
+`SKILL.md`, `references/`, `templates/`, and `scripts/`. Fill
+`templates/basis-manifest.example.json` for each case and run the portable
+checks:
 
 ```bash
 python scripts/validate_manifest.py templates/basis-manifest.example.json --allow-placeholders
 python scripts/public_scan.py .
+```
+
+Repository maintainers should keep `tests/` and also run:
+
+```bash
 python tests/test_public_skill.py
 python tests/test_gaussian_aux_orb.py
 ```
