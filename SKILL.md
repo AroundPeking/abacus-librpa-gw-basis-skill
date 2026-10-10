@@ -68,6 +68,7 @@ and SHA-256 hashes match. A filename or family label is not provenance.
 - Evidence gates: [references/validation-gates.md](references/validation-gates.md)
 - ABACUS-to-LibRPA handoff and `nbands`: [references/gw-handoff.md](references/gw-handoff.md)
 - Public downloads and licensing: [references/public-assets.md](references/public-assets.md)
+- Published 2D/3D calculation bundles: [references/tested-public-bundles.md](references/tested-public-bundles.md)
 
 ## Hard stops
 

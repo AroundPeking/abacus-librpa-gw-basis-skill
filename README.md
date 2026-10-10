@@ -46,6 +46,12 @@ digest into the manifest.
 The detailed source and licensing notes are in
 `references/public-assets.md`.
 
+For published 2D and 3D ABACUS + LibRPA cases, including downloadable PP,
+NAO, ABF, inputs, and GW outputs where present, see
+[`references/tested-public-bundles.md`](references/tested-public-bundles.md).
+The linked data repository provides its own `MANIFEST.tsv` with SHA-256 hashes;
+this skill links to the data instead of duplicating its files.
+
 ## License
 
 The documentation, templates, and scripts in this repository are released

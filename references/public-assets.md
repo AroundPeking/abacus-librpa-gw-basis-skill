@@ -23,6 +23,12 @@ branch names can change.
 - [ABACUS auxiliary-basis generator](https://github.com/AroundPeking/abacus_abf_gen/tree/806cde132cbf98c25809e1a6f51a700ca97ce10c)
   — public source for the explicit ABFS export route documented here; it is
   branch-specific and should be checked for compatibility before use.
+- [Published ABACUS + LibRPA GW calculation data](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks)
+  — paper calculation data with inputs, PP/NAO/ABF assets, main logs, and
+  KS/EXX/GW band data where present. Browse the cases in
+  [references/tested-public-bundles.md](tested-public-bundles.md). The data
+  repository currently has no declared GitHub license, so link to it and check
+  its terms before redistributing files elsewhere.
 
 ## Pseudopotentials and orbital methods
 
