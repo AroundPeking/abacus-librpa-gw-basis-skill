@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "case_id": "replace-with-public-case-id",
+  "target": {
+    "observable": "replace-with-gap-or-self-energy-definition",
+    "xc": "PBE",
+    "spin": "replace-with-spin-setting",
+    "soc": false,
+    "structure_source_url": "https://example.org/structure",
+    "structure_sha256": "CHANGE_ME"
+  },
+  "software": {
+    "abacus": {
+      "source_url": "https://github.com/abacusmodeling/abacus-develop",
+      "commit": "CHANGE_ME"
+    },
+    "librpa": {
+      "source_url": "https://github.com/AESM-Group/LibRPA",
+      "commit": "CHANGE_ME"
+    }
+  },
+  "species": [
+    {
+      "element": "X",
+      "pseudopotential": {
+        "source_url": "https://example.org/pseudopotential",
+        "filename": "X_pbe.upf",
+        "sha256": "CHANGE_ME",
+        "xc": "PBE",
+        "valence_electrons": "CHANGE_ME",
+        "semicore": "CHANGE_ME",
+        "nlcc": "CHANGE_ME",
+        "relativistic": "scalar",
+        "projector_channels": "CHANGE_ME"
+      },
+      "physical_nao": {
+        "source_url": "https://example.org/orbital",
+        "filename": "X_pbe.orb",
+        "sha256": "CHANGE_ME",
+        "basis_label": "CHANGE_ME",
+        "shells": "CHANGE_ME",
+        "radial_cutoffs_bohr": "CHANGE_ME",
+        "generator": {
+          "source_url": "https://github.com/abacusmodeling/ABACUS-orbitals",
+          "commit_or_release": "CHANGE_ME",
+          "training_and_weights": "CHANGE_ME"
+        }
+      },
+      "auxiliary_abf": {
+        "source_url": "https://example.org/abf",
+        "filename": "X_pbe.abfs",
+        "sha256": "CHANGE_ME",
+        "generator_source_url": "CHANGE_ME",
+        "generator_commit": "CHANGE_ME",
+        "for_aux_only": true,
+        "angular_channels": "CHANGE_ME",
+        "pca_or_retained_spectrum": "CHANGE_ME",
+        "unshrunk_dimension": "CHANGE_ME",
+        "shrunk_dimension": "CHANGE_ME"
+      }
+    }
+  ],
+  "validation": {
+    "file_and_radial": "pending",
+    "same_pp_pw_vs_lcao_pbe": "pending",
+    "overlap_conditioning": "pending",
+    "ri_residual_and_coulomb": "pending",
+    "exx_or_rpa_positive_control": "pending",
+    "gw_readiness": "pending",
+    "evidence_urls_or_paths": []
+  }
+}

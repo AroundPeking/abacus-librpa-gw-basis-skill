@@ -1,0 +1,3 @@
+interface:
+  display_name: "ABACUS + LibRPA GW Basis"
+  short_description: "Select and validate GW pseudopotentials and bases"

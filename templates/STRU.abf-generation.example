@@ -1,0 +1,21 @@
+ATOMIC_SPECIES
+X 1.0 X_pbe.upf
+
+NUMERICAL_ORBITAL
+X_pbe_for_aux.orb
+
+# No ABFS_ORBITAL section in this generation input.
+LATTICE_CONSTANT
+1.0
+
+LATTICE_VECTORS
+<A1X> <A1Y> <A1Z>
+<A2X> <A2Y> <A2Z>
+<A3X> <A3Y> <A3Z>
+
+ATOMIC_POSITIONS
+Cartesian_angstrom
+X
+0.0
+1
+0.0 0.0 0.0 0 0 0

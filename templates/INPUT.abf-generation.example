@@ -1,0 +1,10 @@
+# Schematic for the pinned explicit-export route described in
+# references/abf-generation.md. Other ABACUS versions may not export .abfs.
+suffix              ABF_GENERATION
+calculation         scf
+basis_type          lcao
+ks_solver           genelpa
+dft_functional     pbe
+rpa                 1
+exx_pca_threshold   <GENERATOR_PCA_THRESHOLD>
+symmetry            <VERSION_APPROPRIATE_VALUE>

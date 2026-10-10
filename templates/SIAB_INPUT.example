@@ -1,0 +1,31 @@
+# Portable schematic based on the public ABACUS-orbitals SIAB example.
+# Replace every placeholder and confirm the syntax of the pinned SIAB release.
+
+# 1. Commands and environment (run on an approved Linux/HPC system)
+EXE_mpi    mpiexec -np <NPROC>
+EXE_pw     <ABACUS_EXECUTABLE>
+
+# 2. Electronic reference calculation
+element     <ELEMENT>
+Ecut        <PW_CUTOFF_RY>
+Rcut        <R_CUT_1_BOHR> <R_CUT_2_BOHR>
+Pseudo_dir  <PUBLIC_PP_DIRECTORY>
+Pseudo_name <MATCHED_PP_FILENAME>
+sigma       <ELECTRONIC_SMEARING_RY>
+
+# 3. Reference structures and state windows
+# STRU name, type, number of bands, max l, nspin, bond lengths
+STRU1       dimer   <NBANDS> <MAX_L> <NSPIN> <DISTANCES_BOHR>
+STRU2       trimer  <NBANDS> <MAX_L> <NSPIN> <DISTANCES_BOHR>
+
+# 4. Optimization levels
+max_steps   <MAX_STEPS>
+# level, reference STRU, reference bands, restart mode, shell ladder
+Level1      STRU1   <NREF_BANDS> none <SHELLS_LEVEL1>
+Level2      STRU1   <NREF_BANDS> fix  <SHELLS_LEVEL2>
+Level3      STRU2   <NREF_BANDS> fix  <SHELLS_LEVEL3>
+
+# 5. Saved orbital labels
+Save1       Level1 Z
+Save2       Level2 DZP
+Save3       Level3 TZDP

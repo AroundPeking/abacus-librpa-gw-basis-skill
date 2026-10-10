@@ -1,0 +1,29 @@
+{
+  "case_id": "replace-with-public-case-id",
+  "results": [],
+  "gates": [
+    {
+      "name": "provenance",
+      "status": "pending",
+      "evidence": "record manifest hashes and immutable commits"
+    },
+    {
+      "name": "physical_pbe_and_overlap",
+      "status": "pending",
+      "evidence": "record same-PP PW/LCAO controls and overlap spectrum"
+    },
+    {
+      "name": "ri_coulomb_and_exx",
+      "status": "pending",
+      "evidence": "record residual, rank, conditioning, and positive control"
+    },
+    {
+      "name": "gw_readiness",
+      "status": "pending",
+      "evidence": "record complete producer-to-reader handoff"
+    }
+  ],
+  "assumptions": [],
+  "pending": [],
+  "excluded_or_anomalous_points": []
+}

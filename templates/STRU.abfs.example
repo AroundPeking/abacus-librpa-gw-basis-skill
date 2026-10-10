@@ -1,0 +1,25 @@
+ATOMIC_SPECIES
+X 1.0 X_pbe.upf
+
+NUMERICAL_ORBITAL
+X_pbe.orb
+
+# Include this section only in a consuming calculation and only when the
+# pinned ABACUS build supports explicit ABFS_ORBITAL input.
+ABFS_ORBITAL
+X_pbe.abfs
+
+LATTICE_CONSTANT
+1.0
+
+LATTICE_VECTORS
+<A1X> <A1Y> <A1Z>
+<A2X> <A2Y> <A2Z>
+<A3X> <A3Y> <A3Z>
+
+ATOMIC_POSITIONS
+Cartesian_angstrom
+X
+0.0
+1
+<X> <Y> <Z> 1 1 1
