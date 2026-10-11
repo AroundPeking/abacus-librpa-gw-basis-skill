@@ -24,6 +24,12 @@ test record; each set keeps its PP, physical NAO, optional `for_aux` orbital,
 ABF, evidence files, and hashes together. Use its `database/index.html` or
 `database/data.json` to search the records before generating a new set.
 
+For direct downloads, read `data/release-manifest.json` and validate it with
+`scripts/validate_database_release.py`. A set is reusable from this repository
+only when the database marks it `publishable` and the manifest links its exact
+PP, physical NAO, optional `for_aux` orbital, ABF, calculation ID, and hashes.
+The database may contain more historical candidates than this mirror.
+
 ## First checks
 
 Before downloading or generating anything, freeze the target protocol:

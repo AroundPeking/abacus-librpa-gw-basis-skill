@@ -45,6 +45,20 @@ python tests/test_gaussian_aux_orb.py
 To record hashes of downloaded files, run
 `python scripts/sha256_files.py file1.upf file2.orb file3.abfs`.
 
+The direct-use mirror is governed by `data/release-manifest.json` and is
+checked against a pinned database checkout with:
+
+```bash
+python scripts/validate_database_release.py --database-root ../abacus-librpa-gw-database
+```
+
+The first release intentionally contains no mirrored payloads: the imported
+historical records are searchable in the database, but none yet has the full
+public input/output and code-commit evidence required for direct distribution.
+When a database set becomes `publishable`, copy its PP, physical NAO, optional
+`for_aux` orbital, and ABF into `data/payloads/<set-id>/` and add reciprocal
+hash entries to the manifest.
+
 Native ABACUS/LibRPA builds and scientific runs belong on the user's approved
 Linux/HPC environment. The included checks are static and dependency-free.
 The scripts require Python 3.8 or newer and use only the standard library.

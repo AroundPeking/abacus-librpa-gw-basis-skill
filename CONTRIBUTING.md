@@ -29,3 +29,7 @@ git diff --check
 These checks are a static public scan and do not compile ABACUS or LibRPA. A reviewer should
 also inspect the exact PP/NAO/ABF association, the producer and LibRPA commit
 identity, and the physical gate evidence before calling a result validated.
+
+When the database marks a set `publishable`, copy its exact payloads under
+`data/payloads/<set-id>/`, update `data/release-manifest.json`, and run
+`python scripts/validate_database_release.py --database-root <database-checkout>`.

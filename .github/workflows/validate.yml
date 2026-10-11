@@ -15,4 +15,10 @@ jobs:
           python-version: "3.11"
       - run: python tests/test_public_skill.py
       - run: python tests/test_gaussian_aux_orb.py
+      - uses: actions/checkout@v4
+        with:
+          repository: AroundPeking/abacus-librpa-gw-database
+          ref: 210c0729846bf8593651a3c2951ecf333f895934
+          path: database-source
+      - run: python scripts/validate_database_release.py --database-root database-source
       - run: python scripts/public_scan.py .
