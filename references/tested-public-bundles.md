@@ -7,7 +7,9 @@ benchmarks:
 - [2D materials and basis assets](tested-public-bundles-2d.md)
 - [3D bulk cases and basis assets](tested-public-bundles-3d.md)
 
-Both lists point to the published
+Both lists point to the separate
+[ABACUS + LibRPA GW database](https://github.com/AroundPeking/abacus-librpa-gw-database)
+and the published
 [ABACUS + LibRPA GW calculation-data repository](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks).
 Its [`MANIFEST.tsv`](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks/blob/main/MANIFEST.tsv)
 records SHA-256 hashes for retained files. The current upstream repository has

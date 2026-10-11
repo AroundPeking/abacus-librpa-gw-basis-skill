@@ -15,13 +15,14 @@ syntactically valid and still be unsuitable for a GW calculation. Keep four
 labels separate in every report: `results`, `gates`, `assumptions`, and
 `pending`.
 
-The repository contains the current public asset inventory in
-`data/elements/` and the calculation database in `data/calculations/`. The two
-dimensions are intentionally separate. Each element directory contains only
-sets that have an imported payload or an explicit test record; each set keeps
-its PP, physical NAO, optional `for_aux` orbital, ABF, evidence files, and
-hashes together. Use `database/index.html` or `database/data.json` to search
-the records before generating a new set.
+The actual public asset inventory and calculation database are maintained in
+the companion repository
+[`AroundPeking/abacus-librpa-gw-database`](https://github.com/AroundPeking/abacus-librpa-gw-database).
+The two dimensions are intentionally separate. Each element directory in that
+repository contains only sets that have an imported payload or an explicit
+test record; each set keeps its PP, physical NAO, optional `for_aux` orbital,
+ABF, evidence files, and hashes together. Use its `database/index.html` or
+`database/data.json` to search the records before generating a new set.
 
 ## First checks
 
@@ -68,11 +69,12 @@ and SHA-256 hashes match. A filename or family label is not provenance.
    State which gates passed, which assumptions were made, and which checks are
    still pending. Preserve anomalous points and raw band indices.
 7. **Publish a contribution.** Add immutable element-set and calculation
-   records as described in `references/database.md`. Keep the original asset
-   hash, the published hash, the exact ABACUS/LibRPA commit when it is known,
-   and a short explanation of every redaction. A new result can supersede a
-   contextual recommendation only after the same PP, NAO, ABF, producer,
-   Coulomb convention, k/q mesh, and observable have been compared.
+   records to the companion database as described in `references/database.md`.
+   Keep the original asset hash, the published hash, the exact ABACUS/LibRPA
+   commit when it is known, and a short explanation of every redaction. A new
+   result can supersede a contextual recommendation only after the same PP,
+   NAO, ABF, producer, Coulomb convention, k/q mesh, and observable have been
+   compared.
 
 ## References to load as needed
 

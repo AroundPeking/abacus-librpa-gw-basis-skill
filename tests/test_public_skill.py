@@ -60,7 +60,7 @@ def main() -> int:
     require("templates/KPT.gamma.example", ("1 1 1 0 0 0",))
     require(
         "README.md",
-        ("data/elements", "data/calculations", "database/index.html", "universally best"),
+        ("abacus-librpa-gw-database", "database/data.json", "universally best"),
     )
     require(
         "references/database.md",
@@ -68,12 +68,8 @@ def main() -> int:
     )
     require(
         "CONTRIBUTING.md",
-        ("data/elements", "basis_candidates", "sha256", "public scan"),
+        ("abacus-librpa-gw-database", "basis_candidates", "sha256", "public scan"),
     )
-    assert (ROOT / "database/data.json").is_file()
-    assert any((ROOT / "data/elements").glob("*/sets/*/set.json"))
-    assert any((ROOT / "data/calculations/2d").glob("*/*/record.json"))
-    assert any((ROOT / "data/calculations/3d").glob("*/*/record.json"))
     require(
         "references/abf-generation.md",
         ("exx_cs_inv_thr", "for_aux", "gen_opt_abfs", "exit(0)", "806cde132cbf98c25809e1a6f51a700ca97ce10c"),

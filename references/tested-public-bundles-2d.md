@@ -1,8 +1,8 @@
 # 2D materials: published basis bundles
 
-This repository contains the imported 2D payloads under
-[`data/elements`](../data/elements) and the result records under
-[`data/calculations/2d`](../data/calculations/2d). The material table below is
+The imported 2D payloads and result records are in the separate
+[ABACUS + LibRPA GW database](https://github.com/AroundPeking/abacus-librpa-gw-database),
+under `data/elements` and `data/calculations/2d`. The material table below is
 the historical band-result index. An exact material-to-set binding is shown in
 the database only when the source audit proves it; otherwise the record keeps
 the result and lists contextual candidate sets separately.
@@ -27,7 +27,7 @@ host-specific path.
 | S | `2s2p2d1f` | [GTH-PBE S](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks/blob/main/FIG/Fig_10_MoS2_WS2/ABACUS_producer_input/assets/S-GTH-PBE-q6-cp2k-default-grid.upf) | [foraux, PCA 1e-5, 328 functions](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks/blob/main/FIG/Fig_10_MoS2_WS2/ABACUS_producer_input/assets/S_GTH-PBE_foraux_1g_pca1e-5_naux328.abfs) |
 | W | `6s3p3d2f` | [GTH-PBE W](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks/blob/main/FIG/Fig_10_MoS2_WS2/ABACUS_producer_input/assets/W-GTH-PBE-q14-cp2k-default-grid.upf) | [foraux, PCA 1e-5, 584 functions](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks/blob/main/FIG/Fig_10_MoS2_WS2/ABACUS_producer_input/assets/W_GTH-PBE_foraux_1g_pca1e-5_naux584.abfs) |
 
-The matched physical orbitals are [Mo](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks/blob/main/FIG/Fig_10_MoS2_WS2/ABACUS_producer_input/assets/Mo_gga_10au_100Ry_4s2p2d1f.orb), [S](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks/blob/main/FIG/Fig_10_MoS2_WS2/ABACUS_producer_input/assets/S_gga_10au_100Ry_2s2p2d1f.orb), and [W](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks/blob/main/FIG/Fig_10_MoS2_WS2/ABACUS_producer_input/assets/W_gga_10au_100Ry_6s3p3d2f.orb). GW outputs are in the case's `LibRPA_GW` folder. The same public files are imported into this repository when their redistribution status permits it; use the local set records and hashes as the canonical lookup. The labels and dimensions identify these published files; they are not defaults for new materials or code versions.
+The matched physical orbitals are [Mo](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks/blob/main/FIG/Fig_10_MoS2_WS2/ABACUS_producer_input/assets/Mo_gga_10au_100Ry_4s2p2d1f.orb), [S](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks/blob/main/FIG/Fig_10_MoS2_WS2/ABACUS_producer_input/assets/S_gga_10au_100Ry_2s2p2d1f.orb), and [W](https://github.com/AESM-Group/abacus-librpa-g0w0-nao-pp-benchmarks/blob/main/FIG/Fig_10_MoS2_WS2/ABACUS_producer_input/assets/W_gga_10au_100Ry_6s3p3d2f.orb). GW outputs are in the case's `LibRPA_GW` folder. The same public files are imported into the separate database when their redistribution status permits it; use its set records and hashes as the canonical lookup. The labels and dimensions identify these published files; they are not defaults for new materials or code versions.
 
 ## Imported 2D element sets
 

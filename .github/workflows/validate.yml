@@ -1,4 +1,4 @@
-name: Validate library
+name: Validate skill
 on:
   push:
   pull_request:
@@ -13,8 +13,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: python tests/test_library.py
-      - run: python scripts/library.py --write-catalog
       - run: python tests/test_public_skill.py
       - run: python tests/test_gaussian_aux_orb.py
       - run: python scripts/public_scan.py .

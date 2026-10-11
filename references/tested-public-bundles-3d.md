@@ -1,8 +1,8 @@
 # 3D bulk materials: published basis bundles
 
-This repository imports the 3D calculation records under
-[`data/calculations/3d`](../data/calculations/3d) and the element payloads
-under [`data/elements`](../data/elements). The records preserve the exact case
+The separate [ABACUS + LibRPA GW database](https://github.com/AroundPeking/abacus-librpa-gw-database)
+contains the 3D calculation records under `data/calculations/3d` and the
+element payloads under `data/elements`. The records preserve the exact case
 inputs, selected band outputs, logs, hashes, and source archive commit when
 available. They remain historical diagnostics unless the record says that the
 target physical gates passed.

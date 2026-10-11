@@ -1,9 +1,9 @@
 # Public basis and calculation database
 
-The repository is both a reusable skill and a small provenance database. It
-stores the actual public payloads, not only download links. The database is
-deliberately append-oriented: a changed PP, NAO, ABF, generator input, or
-runtime protocol receives a new record and a new immutable set ID.
+The companion [ABACUS + LibRPA GW database](https://github.com/AroundPeking/abacus-librpa-gw-database)
+stores the actual public payloads, not only download links. It is deliberately
+append-oriented: a changed PP, NAO, ABF, generator input, or runtime protocol
+receives a new record and a new immutable set ID.
 
 ## Directory layout
 
@@ -26,7 +26,7 @@ data/
 database/data.json
 ```
 
-`set.json` binds one element's PP, physical NAO, optional auxiliary-generation
+`set.json` in the database repository binds one element's PP, physical NAO, optional auxiliary-generation
 orbital, and ABF. It may also contain portable generation evidence. A
 calculation `record.json` binds the exact set IDs used by that case when the
 source audit proves the association. A historical band archive whose exact
@@ -114,8 +114,10 @@ log printed only a prefix.
 7. Copy only permitted public assets into `data/elements/<Element>/`, create a
    new `set.json`, and put portable inputs, logs, results, and figures under the
    matching `data/calculations/2d/` or `data/calculations/3d/` case directory.
-   Run `python3 scripts/library.py --write-catalog` and the public scan before
-   opening a pull request.
+   From the database repository root, run `python3 scripts/library.py
+   --write-catalog`, the database tests, and the public scan before opening a
+   pull request. The skill repository contains the schema and review rules but
+   does not duplicate the database payloads or catalog generator.
 
 The database intentionally does not assign a universal “best” basis. A set can
 be the current contextual choice for one material and only a generation
