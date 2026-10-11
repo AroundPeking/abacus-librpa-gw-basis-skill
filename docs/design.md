@@ -33,8 +33,10 @@ calculation directory, or unpublished binary asset.
 
 ## Safety boundaries
 
-The skill does not ship third-party PP/NAO/ABF binaries. It gives users a
-reproducible manifest format and directs them to the publisher's download or
-release page. Native ABACUS/LibRPA compilation and large calculations are left to
-the user's approved Linux/HPC environment; local static checks do not claim
-scientific acceptance.
+The repository ships only those third-party PP/NAO/ABF payloads whose source
+terms or project policy permit this redistribution, and records the source,
+license note, original hash, published hash, and any text redaction. Other
+assets remain links or are marked missing until their reuse terms are clear.
+Native ABACUS/LibRPA compilation and large calculations are left to the user's
+approved Linux/HPC environment; local static checks do not claim scientific
+acceptance.

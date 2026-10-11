@@ -15,6 +15,14 @@ syntactically valid and still be unsuitable for a GW calculation. Keep four
 labels separate in every report: `results`, `gates`, `assumptions`, and
 `pending`.
 
+The repository contains the current public asset inventory in
+`data/elements/` and the calculation database in `data/calculations/`. The two
+dimensions are intentionally separate. Each element directory contains only
+sets that have an imported payload or an explicit test record; each set keeps
+its PP, physical NAO, optional `for_aux` orbital, ABF, evidence files, and
+hashes together. Use `database/index.html` or `database/data.json` to search
+the records before generating a new set.
+
 ## First checks
 
 Before downloading or generating anything, freeze the target protocol:
@@ -59,6 +67,12 @@ and SHA-256 hashes match. A filename or family label is not provenance.
 6. **Report evidence.** Use the manifest and validation template in `templates/`.
    State which gates passed, which assumptions were made, and which checks are
    still pending. Preserve anomalous points and raw band indices.
+7. **Publish a contribution.** Add immutable element-set and calculation
+   records as described in `references/database.md`. Keep the original asset
+   hash, the published hash, the exact ABACUS/LibRPA commit when it is known,
+   and a short explanation of every redaction. A new result can supersede a
+   contextual recommendation only after the same PP, NAO, ABF, producer,
+   Coulomb convention, k/q mesh, and observable have been compared.
 
 ## References to load as needed
 
@@ -69,6 +83,9 @@ and SHA-256 hashes match. A filename or family label is not provenance.
 - ABACUS-to-LibRPA handoff and `nbands`: [references/gw-handoff.md](references/gw-handoff.md)
 - Public downloads and licensing: [references/public-assets.md](references/public-assets.md)
 - Published 2D/3D calculation bundles: [references/tested-public-bundles.md](references/tested-public-bundles.md)
+- Database layout and contribution protocol: [references/database.md](references/database.md)
+- Imported 2D records: [references/tested-public-bundles-2d.md](references/tested-public-bundles-2d.md)
+- Imported 3D records: [references/tested-public-bundles-3d.md](references/tested-public-bundles-3d.md)
 
 ## Hard stops
 
@@ -76,7 +93,9 @@ and SHA-256 hashes match. A filename or family label is not provenance.
 - Do not compare GW numbers with different PP/NAO/ABF producers unless the
   comparison is explicitly a provenance study.
 - Do not copy private paths, host aliases, scheduler settings, task IDs, or
-  unpublished binaries into a public bundle.
+  unpublished binaries into a public bundle. Public records must use
+  repository-relative paths and must say when an exact production asset or
+  code commit is missing.
 - Do not treat a larger NAO/ABF or a familiar PCA threshold as automatically
   more accurate; inspect conditioning and the target observable.
 - Native ABACUS/LibRPA compilation belongs in the approved Linux/HPC environment.

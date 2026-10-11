@@ -1,22 +1,43 @@
 # ABACUS + LibRPA GW basis skill
 
 This public skill explains how to obtain or generate a matched
-pseudopotential, physical numerical atomic orbital, and localized auxiliary
-basis for ABACUS + LibRPA GW calculations. It separates file checks from
-physical gates and keeps provenance explicit.
+pseudopotential (PP), physical numerical atomic orbital (NAO), and localized
+auxiliary basis (ABF) for ABACUS + LibRPA RPA/GW calculations. It also ships a
+curated, hash-addressed library of the public PP/NAO/ABF files and calculation
+evidence that have already been collected. The data are split into `2d` and
+`3d` so that a two-dimensional Coulomb and band-path result is not silently
+treated as a bulk benchmark.
 
-The repository contains no private calculation directories, host settings,
-scheduler jobs, or third-party binary assets. Download PP/NAO/ABF files from
-their publisher, check the license, and record the source URL plus SHA-256 in
-the manifest.
+Binary payloads are included only when their source license or project policy
+allows redistribution. Every copied file records its original SHA-256, its
+published SHA-256, and any redaction or other transformation in the adjacent
+JSON record. Scientific status is deliberately conservative: a file-integrity
+pass, an atomic radial check, a PBE check, a completed producer run, and a
+physical GW acceptance are different statuses.
 
 ## Use
 
 Copy the whole repository into the skill directory of the target agent, or pass
-the repository URL to an agent that supports public skills. At minimum keep
-`SKILL.md`, `references/`, `templates/`, and `scripts/`. Fill
-`templates/basis-manifest.example.json` for each case and run the portable
-checks:
+the repository URL to an agent that supports public skills. The searchable
+catalog is available from `database/index.html` after the repository is served
+as a static site. The same records are plain JSON, so the database can also be
+queried without a browser.
+
+The checked-in payloads live under `data/elements/<Element>/`; calculation
+inputs, logs, figures, and results live under `data/calculations/2d/` or
+`data/calculations/3d/`. The repository therefore remains usable when an
+upstream case or download link changes.
+
+To add a new element set, put the PP, physical NAO, optional `for_aux` orbital,
+and ABF under that element's directory, add one `sets/<set-id>/set.json`, then
+add the calculation record under either `data/calculations/2d/<material>/` or
+`data/calculations/3d/<material>/`. Use a new immutable set ID when any payload
+changes. The complete field definitions and review rules are in
+[`references/database.md`](references/database.md) and
+[`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+For a standalone manifest, fill
+`templates/basis-manifest.example.json` and run the portable checks:
 
 ```bash
 python scripts/validate_manifest.py templates/basis-manifest.example.json --allow-placeholders
@@ -50,13 +71,18 @@ digest into the manifest.
 - SG15/ONCV: http://www.quantum-simulation.org/potentials/sg15_oncv/
 
 The detailed source and licensing notes are in
-`references/public-assets.md`.
+`references/public-assets.md`. The repository's current inventory and its
+limitations are summarized in:
 
-For published 2D and 3D ABACUS + LibRPA cases, including downloadable PP,
-NAO, ABF, inputs, and GW outputs where present, see
-[`references/tested-public-bundles.md`](references/tested-public-bundles.md).
-The linked data repository provides its own `MANIFEST.tsv` with SHA-256 hashes;
-this skill links to the data instead of duplicating its files.
+- [`references/tested-public-bundles-2d.md`](references/tested-public-bundles-2d.md)
+- [`references/tested-public-bundles-3d.md`](references/tested-public-bundles-3d.md)
+- [`references/database.md`](references/database.md)
+
+The historical records are not a claim that one PP/NAO/ABF is universally best.
+Use the narrow `validation_scope`, `status`, and `missing` fields before copying
+a set into a new material. When a new basis improves a controlled comparison,
+add it as a new set and update the affected calculation record rather than
+overwriting the old evidence.
 
 ## License
 

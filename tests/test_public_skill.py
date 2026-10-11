@@ -59,6 +59,22 @@ def main() -> int:
     require("templates/STRU.abf-generation.example", ("X_pbe_for_aux.orb", "ATOMIC_POSITIONS"))
     require("templates/KPT.gamma.example", ("1 1 1 0 0 0",))
     require(
+        "README.md",
+        ("data/elements", "data/calculations", "database/index.html", "universally best"),
+    )
+    require(
+        "references/database.md",
+        ("basis_candidates", "basis_comparison", "for_aux", "PCA", "2d", "3d"),
+    )
+    require(
+        "CONTRIBUTING.md",
+        ("data/elements", "basis_candidates", "sha256", "public scan"),
+    )
+    assert (ROOT / "database/data.json").is_file()
+    assert any((ROOT / "data/elements").glob("*/sets/*/set.json"))
+    assert any((ROOT / "data/calculations/2d").glob("*/*/record.json"))
+    assert any((ROOT / "data/calculations/3d").glob("*/*/record.json"))
+    require(
         "references/abf-generation.md",
         ("exx_cs_inv_thr", "for_aux", "gen_opt_abfs", "exit(0)", "806cde132cbf98c25809e1a6f51a700ca97ce10c"),
     )
@@ -67,7 +83,9 @@ def main() -> int:
         r"(?:/" + r"Users/|/home/" + r"(?:[A-Za-z0-9_.-]+)|ssh:" + r"//|SLURM_" + r"JOB_ID)"
     )
     for path in ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts:
+        if not path.is_file() or any(part in {".git", "__pycache__"} for part in path.parts):
+            continue
+        if path.suffix.lower() in {".png", ".jpg", ".jpeg", ".pdf", ".sqlite", ".pyc"}:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         assert not forbidden.search(text), f"private path or host leak in {path}"
