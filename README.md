@@ -1,5 +1,11 @@
 # ABACUS + LibRPA GW basis skill
 
+## [打开网页版 / Open web database](https://aroundpeking.github.io/abacus-librpa-gw-database/database/)
+
+Browse the live materials and basis catalog, including archived input previews
+and downloads. No installation or GitHub sign-in is needed to use the website.
+The source repository and this agent skill remain separate from the web UI.
+
 This public skill explains how to obtain or generate a matched
 pseudopotential (PP), physical numerical atomic orbital (NAO), and localized
 auxiliary basis (ABF) for ABACUS + LibRPA RPA/GW calculations. The actual
@@ -19,7 +25,17 @@ Copy this repository into the skill directory of the target agent, or pass the
 repository URL to an agent that supports public skills. Browse the companion
 database repository for actual assets, hashes, inputs, logs, figures, and
 results. Its `database/data.json` is machine-readable and its `database/`
-directory is a static searchable catalog.
+directory is a static searchable catalog. Open a calculation's **Input files**
+section to preview or download its archived inputs, and **Pseudopotentials &
+basis** to inspect the exact asset bindings. An **Inputs not archived** message
+means those inputs are absent; candidate assets do not fill that gap.
+
+The database preserves hash-addressed files while showing readable names.
+Recorded filenames and calculation aliases are used when supported by the
+metadata; a descriptive alias is explicitly labelled when the original name
+is unknown. Always compare the full SHA-256 and calculation-specific names
+before reuse. Archive downloads are separate from the validated direct-use
+mirror described below.
 
 To add a new element set or calculation, follow the contribution protocol in
 the database repository and use a new immutable set ID when any payload
